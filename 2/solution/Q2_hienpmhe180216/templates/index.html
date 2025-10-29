@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Database</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            text-align: center;
+            color: #666;
+        }
+        .actions {
+            display:flex;
+            justify-content:center;
+            gap:1rem;
+            margin-top:1rem;
+        }
+        .btn {
+            padding:0.6rem 1rem;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-weight:600;
+            color:#fff;
+        }
+        .btn-primary { background:#007bff; }
+        .btn-ghost { background:#6c757d; }
+
+        /* Additional styles for product list */
+        #product-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        #product-list li {
+            padding: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Demo Database</h1>
+
+        <!-- Add Button -->
+        <div style="margin: 20px 0;">
+          <a id="home" href="/" class="btn" style="padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Home</a>
+          <a id="sort" href="/?sort=price" class="btn" style="padding: 10px 20px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px;">Sort by Price</a>
+        </div>
+
+        <!-- Add Statistics Button -->
+        <div style="margin: 20px 0;">
+          <a id="statistics" href="/statistics" class="btn" style="padding: 10px 20px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">Product Statistics</a>
+        </div>
+
+        <!-- Product List -->
+        <h2>Product List</h2>
+        <table border="1" style="width:100%; border-collapse:collapse;">
+            <thead>
+                <tr>
+                    <th>ProductName</th>
+                    <th>Category</th>
+                    <th>UnitsInStock</th>
+                    <th>UnitPrice (VND)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td id="name_{{ product.id }}">{{ product.ProductName }}</td>
+                    <td id="category_{{ product.id }}">{{ product.CategoryName }}</td>
+                    <td id="units_{{ product.id }}">{{ product.UnitsInStock }}</td>
+                    <td id="price_{{ product.id }}">{{ product.UnitPrice | format_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+# ====================================
+# Python / Flask / PyCharm .gitignore
+# ====================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+*.sqlite
+*.log
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (if Flask project later uses Django parts)
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask migrations (if using Flask-Migrate / Alembic)
+migrations/
+*.db-journal
+
+# PyCharm IDE settings
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VSCode (optional, if some members use it)
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# dotenv environment files
+.env
+.env.*
+*.env
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
